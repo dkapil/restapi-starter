@@ -1,13 +1,14 @@
 package liveproject.webreport.config;
 
-import liveproject.webreport.match.MatchController;
-import liveproject.webreport.match.MatchService;
-import liveproject.webreport.season.Season;
+import static org.mockito.Mockito.when;
+
 import org.mockito.Mockito;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import static org.mockito.Mockito.when;
+import liveproject.webreport.match.MatchController;
+import liveproject.webreport.match.MatchService;
+import liveproject.webreport.season.Season;
 
 @Configuration
 public class TestWebConfig {
@@ -25,7 +26,7 @@ public class TestWebConfig {
     }
 
     @Bean
-    public MatchController matchController() {
+    public MatchController matchRestController() {
         return new MatchController(profileService());
     }
 }
